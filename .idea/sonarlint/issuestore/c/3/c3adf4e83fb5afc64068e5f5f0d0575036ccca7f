@@ -1,0 +1,16 @@
+
+L
+java:S1128"/Remove this unused import 'java.util.Iterator'.(¥ÍòÕ8ŒÎŠÛŞ.
+‘
+java:S1319"oThe type of the "letters" object should be an interface such as "Set" rather than the implementation "HashSet".(Óé©©øÿÿÿÿ8ÍºİÀŞ.
+Š
+java:S1319"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(™ÁâÓ8ÂİÉÀŞ.
+•
+java:S13190"sThe return type of this method should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ø›ëûÿÿÿÿ8†æğ×Ş.
+–
+java:S13194"tThe type of the "states" object should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ñ¡²¶úÿÿÿÿ8¶¨µÃŞ.
+–
+java:S1319"tThe type of the "states" object should be an interface such as "Map" rather than the implementation "LinkedHashMap".(Óé©©øÿÿÿÿ8ÄËµÃŞ.
+–
+java:S1319"tThe type of the "transactions" object should be an interface such as "Set" rather than the implementation "HashSet".(£øÚ¹ÿÿÿÿÿ8÷öÉÀŞ.
+U	java:S1069"9Replace this use of System.out or System.err by a logger.(´Ÿµú8Ò‚‘ÛŞ.

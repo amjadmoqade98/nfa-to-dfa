@@ -2,7 +2,7 @@ package project.utils;
 
 import project.model.Bounds;
 import project.model.State;
-import project.services.Ndfsa;
+import project.services.NDFSA;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,15 +10,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public enum FileParser {
-    INSTANCE;
+public class NDFSAFileParser {
 
-    public Ndfsa parseFile(String fileUrl) throws IOException {
+    public static NDFSA parseFile(String fileUrl) throws IOException {
 
-        File file = new File("src\\resources\\data.txt");
+        File file = new File(fileUrl);
+
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
-        HashSet<String> letters = new HashSet<>();
+        LinkedHashSet<String> letters = new LinkedHashSet<>();
         LinkedHashMap<String, State> states = new LinkedHashMap<>();
         Bounds bounds = new Bounds();
 
@@ -45,22 +45,19 @@ public enum FileParser {
                 bounds.setEndNode(states.get(st));
                 isSecondLine = false;
             } else if (isThirdLine) {
-                String[] transactionsS = st.split(" ");
-                for (int i = 0; i < transactionsS.length; i++) {
-                    letters.add(transactionsS[i]);
-                }
+                String[] letters1 = st.split(" ");
+                letters.addAll(Arrays.asList(letters1));
                 isThirdLine = false;
             } else {
-                String[] Transaction = st.split(" ");
-                states.get(Transaction[0]).addTransaction(Transaction[2],
-                        states.get(Transaction[1]));
+                String[] transaction = st.split(" ");
+                states.get(transaction[0]).addTransaction(transaction[2],
+                        states.get(transaction[1]));
                 if (bounds.getStartNode() == null) {
-                    bounds.setStartNode(states.get(Transaction[0]));
+                    bounds.setStartNode(states.get(transaction[0]));
                 }
             }
         }
-        Ndfsa ndfsa = new Ndfsa(letters, bounds, states);
 
-        return ndfsa;
+        return new NDFSA(letters, bounds, states);
     }
 }

@@ -1,30 +1,47 @@
 package project.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 
 public class State {
 
     private String state ;
+    private boolean visiting;
     private boolean visited;
-
-    private List<State> next ;
-    private List<String> transactions ;
+    private LinkedHashMap<String, LinkedHashSet<State>> transactions ;
 
     public State(String state) {
         this.state = state;
-        this.transactions = new ArrayList<>();
-        this.next = new ArrayList<>();
+        this.transactions = new LinkedHashMap<>();
     }
 
     public void addTransaction(String letter , State next) {
-        this.next.add(next);
-        this.transactions.add(letter);
+        if(transactions.get(letter) == null) {
+            transactions.put(letter, new LinkedHashSet<>());
+        }
+       this.transactions.get(letter).add(next);
+    }
+
+    public void setTransactions(LinkedHashMap<String, LinkedHashSet<State>> transactions) {
+        this.transactions = transactions;
+    }
+
+    public LinkedHashMap<String,  LinkedHashSet<State>> getTransactions() {
+        return transactions;
     }
 
     public String getState() {
         return state;
     }
+
+    public boolean isVisiting() {
+        return visiting;
+    }
+
+    public void setVisiting(boolean visiting) {
+        this.visiting = visiting;
+    }
+
 
     public boolean isVisited() {
         return visited;
@@ -34,19 +51,7 @@ public class State {
         this.visited = visited;
     }
 
-    public List<State> getNext() {
-        return next;
-    }
-
-    public void setNext(List<State> next) {
-        this.next = next;
-    }
-
-    public List<String> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(List<String> transactions) {
-        this.transactions = transactions;
+    public void setState(String state) {
+        this.state = state;
     }
 }

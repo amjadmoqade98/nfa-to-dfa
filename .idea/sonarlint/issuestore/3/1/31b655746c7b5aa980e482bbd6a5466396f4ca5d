@@ -1,0 +1,44 @@
+
+>
+java:S1643t"Use a StringBuilder instead.(£½Øıÿÿÿÿ8òÈ¢ÛŞ.
+L
+java:S3740"/Provide the parametrized type for this generic.(ĞşòÒ8œ÷’ÛŞ.
+Q
+java:S3740"/Provide the parametrized type for this generic.(”ÉÏ£şÿÿÿÿ8Ò²Ÿ¿Ş.
+L
+java:S3740'"/Provide the parametrized type for this generic.(×öë8œ÷’ÛŞ.
+Q
+java:S3740>"/Provide the parametrized type for this generic.(¦Š»…şÿÿÿÿ8œ÷’ÛŞ.
+L
+java:S3740"/Provide the parametrized type for this generic.(ĞşòÒ8œ÷’ÛŞ.
+v
+java:S2293Y"YReplace the type specification in this constructor call with the diamond operator ("<>").(ª“ÇÉ8òÈ¢ÛŞ.
+U	java:S106€"9Replace this use of System.out or System.err by a logger.(¦Ñ›~8òÈ¢ÛŞ.
+L
+java:S3740Y"/Provide the parametrized type for this generic.(ª“ÇÉ8òÈ¢ÛŞ.
+I
+java:S1612`",Replace this lambda with a method reference.(‘¬½¬8œ÷’ÛŞ.
+L
+java:S3740"/Provide the parametrized type for this generic.(…÷Ö«8œ÷’ÛŞ.
+‘
+java:S1319X"tThe type of the "states" object should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ñÿïå8¬¥‹øŞ.
+Œ
+java:S1319X"oThe type of the "letters" object should be an interface such as "Set" rather than the implementation "HashSet".(ñÿïå8¬¥‹øŞ.
+”
+java:S1319X"wThe type of the "endStates" object should be an interface such as "Set" rather than the implementation "LinkedHashSet".(ñÿïå8¬¥‹øŞ.
+’
+java:S1319ƒ"tThe type of the "states" object should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ÑÀ˜½8¬¥‹øŞ.
+
+java:S1319ƒ"oThe type of the "letters" object should be an interface such as "Set" rather than the implementation "HashSet".(ÑÀ˜½8¬¥‹øŞ.
+M
+java:S1128"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8¬¥‹øŞ.
+T
+java:S1128"7Remove this unused import 'java.io.OutputStreamWriter'.(Ÿ“¸8¬¥‹øŞ.
+o
+java:S37762"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Á»›ê8¬¥‹øŞ.
+=
+java:S1110D"!Remove these useless parentheses.(Ô®ğ;8¬¥‹øŞ.
+o
+java:S3776X"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(ñÿïå8¬¥‹øŞ.
+f
+java:S3358e"DExtract this nested ternary operation into an independent statement.(¹ÑÙûÿÿÿÿ8¬¥‹øŞ.

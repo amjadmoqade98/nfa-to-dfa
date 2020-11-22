@@ -1,0 +1,17 @@
+
+œ
+java:S1319"zThe type of the "transactions" object should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ÒİßÀıÿÿÿÿ8Ò©¿ÛŞ.
+6
+java:S1700"Rename field "state"(µîŠ©øÿÿÿÿ8ÍÁÓØŞ.
+p
+java:S3824"NReplace this "Map.get()" and condition with a call to "Map.computeIfAbsent()".(ùÙæĞøÿÿÿÿ8¶ÚØŞ.
+•
+java:S1319"sThe return type of this method should be an interface such as "Map" rather than the implementation "LinkedHashMap".(éÂáĞüÿÿÿÿ8ÍÁÓØŞ.
+
+java:S13196"sThe return type of this method should be an interface such as "Set" rather than the implementation "LinkedHashSet".(»ˆÅÄ8´¥‹øŞ.
+I
+java:S16129",Replace this lambda with a method reference.(îñ¤û8´¥‹øŞ.
+N
+java:S16028",Remove useless curly braces around statement(åÎÕÆûÿÿÿÿ8´¥‹øŞ.
+I
+java:S16029",Remove useless curly braces around statement(îñ¤û8´¥‹øŞ.

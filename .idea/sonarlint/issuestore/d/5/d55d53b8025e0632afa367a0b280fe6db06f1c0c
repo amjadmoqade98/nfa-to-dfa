@@ -1,0 +1,35 @@
+
+–
+java:S1319½"sThe return type of this method should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ø›ëûÿÿÿÿ8ºó¶ÛŞ.
+D
+java:S1068"'Remove this unused "map" private field.(òåîí8‚—Ö×Ş.
+‹
+java:S1319¹"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(™ÁâÓ8ºó¶ÛŞ.
+v
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(’³óµ8ôĞÎÚŞ.
+|
+java:S2293š"YReplace the type specification in this constructor call with the diamond operator ("<>").(Îª³Úùÿÿÿÿ8ÕúÜŞ.
+{
+java:S22936"YReplace the type specification in this constructor call with the diamond operator ("<>").(â¹åÇùÿÿÿÿ8ÿ¶œÜŞ.
+’
+java:S1319"uThe type of the "letters" object should be an interface such as "Set" rather than the implementation "LinkedHashSet".(Ë¸Ä¦8¤¥‹øŞ.
+‘
+java:S1319"tThe type of the "states" object should be an interface such as "Map" rather than the implementation "LinkedHashMap".(Ë¸Ä¦8¤¥‹øŞ.
+
+java:S1319Š"rThe type of the "accessible" object should be an interface such as "Set" rather than the implementation "HashSet".(ÚÁŸ±8¤¥‹øŞ.
+–
+java:S1319Á"sThe return type of this method should be an interface such as "Set" rather than the implementation "LinkedHashSet".(¼Ù³şÿÿÿÿ8¤¥‹øŞ.
+L
+java:S1066ª"/Merge this if statement with the enclosing one.(­ƒ»8¤¥‹øŞ.
+9
+java:S1643i"Use a StringBuilder instead.(³Î¿ş8¤¥‹øŞ.
+r	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œŠ¡‚şÿÿÿÿ8¤¥‹øŞ.
+t
+java:S3776G"RRefactor this method to reduce its Cognitive Complexity from 56 to the 15 allowed.(â’¬´üÿÿÿÿ8¤¥‹øŞ.
+u
+java:S2293R"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÛÃÔx8¤¥‹øŞ.
+V	java:S106"9Replace this use of System.out or System.err by a logger.(ë»·ï8¤¥‹øŞ.
+O
+java:S1602‘",Remove useless curly braces around statement(’ÈÚïøÿÿÿÿ8¤¥‹øŞ.
+J
+java:S1602’",Remove useless curly braces around statement(ëÖ®²8¤¥‹øŞ.

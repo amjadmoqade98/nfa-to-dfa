@@ -1,0 +1,16 @@
+
+`
+java:S2583/"CChange this condition so that it does not always evaluate to "true"(™­Áó8û©’ÀŞ.
+n
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(¹®Ùœÿÿÿÿÿ8†“ÀŞ.
+
+java:S1488>"]Immediately return this expression instead of assigning it to the temporary variable "ndfsa".(­â¨üÿÿÿÿ8È’ÛÀŞ.
+K
+java:S1659#")Declare "isThirdLine" on a separate line.(ÑÙöúÿÿÿÿ8û©’ÀŞ.
+L
+java:S1659#"*Declare "isSecondLine" on a separate line.(ÑÙöúÿÿÿÿ8û©’ÀŞ.
+{
+java:S30122"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(şÓ’¬ùÿÿÿÿ8ƒ’ÁŞ.
+m	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú†ö8êšÓÀŞ.
+P
+java:S1172".Remove this unused method parameter "fileUrl".(ºş¿ïıÿÿÿÿ8Ù²‘ÀŞ.
