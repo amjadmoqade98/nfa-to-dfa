@@ -1,38 +1,0 @@
-
-I
-java:S1612]",Replace this lambda with a method reference.(‘¬½¬8œ÷’ÛŞ.
-Q
-java:S3740;"/Provide the parametrized type for this generic.(¦Š»…şÿÿÿÿ8œ÷’ÛŞ.
-”
-java:S1319U"wThe type of the "endStates" object should be an interface such as "Set" rather than the implementation "LinkedHashSet".(ñÿïå8¬¥‹øŞ.
-
-java:S1319€"oThe type of the "letters" object should be an interface such as "Set" rather than the implementation "HashSet".(ÑÀ˜½8¬¥‹øŞ.
-o
-java:S3776U"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(ñÿïå8¬¥‹øŞ.
-L
-java:S3740V"/Provide the parametrized type for this generic.(ª“ÇÉ8òÈ¢ÛŞ.
-’
-java:S1319€"tThe type of the "states" object should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ÑÀ˜½8¬¥‹øŞ.
-v
-java:S2293V"YReplace the type specification in this constructor call with the diamond operator ("<>").(ª“ÇÉ8òÈ¢ÛŞ.
-L
-java:S3740$"/Provide the parametrized type for this generic.(×öë8œ÷’ÛŞ.
-f
-java:S3358b"DExtract this nested ternary operation into an independent statement.(¹ÑÙûÿÿÿÿ8¬¥‹øŞ.
-T	java:S106}"9Replace this use of System.out or System.err by a logger.(¦Ñ›~8òÈ¢ÛŞ.
-L
-java:S3740"/Provide the parametrized type for this generic.(ĞşòÒ8œ÷’ÛŞ.
-L
-java:S3740"/Provide the parametrized type for this generic.(…÷Ö«8œ÷’ÛŞ.
-Q
-java:S3740"/Provide the parametrized type for this generic.(”ÉÏ£şÿÿÿÿ8Ò²Ÿ¿Ş.
->
-java:S1643q"Use a StringBuilder instead.(£½Øıÿÿÿÿ8òÈ¢ÛŞ.
-‘
-java:S1319U"tThe type of the "states" object should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ñÿïå8¬¥‹øŞ.
-L
-java:S3740"/Provide the parametrized type for this generic.(ĞşòÒ8œ÷’ÛŞ.
-Œ
-java:S1319U"oThe type of the "letters" object should be an interface such as "Set" rather than the implementation "HashSet".(ñÿïå8¬¥‹øŞ.
-o
-java:S3776/"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Á»›ê8¬¥‹øŞ.
