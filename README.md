@@ -27,3 +27,22 @@ I did this project for my University Class (Compiler Class)
 2. run the Main.java class
 
 
+## Test case:
+
+file
+<img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/file.png" />
+
+
+Console After Run: 
+
+<img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/ndfsa.png" />
+<img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/dfsa.png" />
+<img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/lambda.png" />
+<img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/nonD.png" />
+<img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/nonAc.png" />
+<img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/minimize.png" />
+<img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/validate.png" />
+
+
+
+()
