@@ -33,7 +33,7 @@ file: <br/>
 <img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/file.png" />
 
 
-Console After Run: <br/>
+Console After Running: <br/>
 
 <img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/ndfsa.png" />
 <img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/lambda.png" />
