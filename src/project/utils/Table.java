@@ -49,9 +49,9 @@ public class Table {
             sumlen += len;
         }
         if (printHeader)
-            buf.append("|").append(printChar('=', sumlen + margin * 2 * column + (column - 1))).append("|\n");
+            buf.append("|").append(printChar('*', sumlen + margin * 2 * column + (column - 1))).append("|\n");
         else
-            buf.append("|").append(printChar('-', sumlen + margin * 2 * column + (column - 1))).append("|\n");
+            buf.append("|").append(printChar('*', sumlen + margin * 2 * column + (column - 1))).append("|\n");
         for (int ii = 0; ii < rows.size(); ii++) {
             List row = rows.get(ii);
             for (int i = 0; i < column; i++) {
@@ -63,9 +63,9 @@ public class Table {
             }
             buf.append("|\n");
             if (printHeader && ii == 0)
-                buf.append("|").append(printChar('=', sumlen + margin * 2 * column + (column - 1))).append("|\n");
+                buf.append("|").append(printChar('*', sumlen + margin * 2 * column + (column - 1))).append("|\n");
             else
-                buf.append("|").append(printChar('-', sumlen + margin * 2 * column + (column - 1))).append("|\n");
+                buf.append("|").append(printChar('*', sumlen + margin * 2 * column + (column - 1))).append("|\n");
         }
         return buf.toString();
     }

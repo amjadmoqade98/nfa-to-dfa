@@ -1,20 +1,14 @@
-S A B C D E G H F
-F
-+ - . d @
-S A +
-S A -
-S A @
-A B d
-A C d
+S A B C D E F G H
+H
+l d @
+S A l
+A B @
 A E @
-B B d
-B F @
-C D .
-C C d
-D D d
-D F @
-E G .
-E E d
-G H d
-H H d
-H F @
+A G @
+B C d
+C D l
+D G @
+E F l
+F G @
+G A @
+G H l
