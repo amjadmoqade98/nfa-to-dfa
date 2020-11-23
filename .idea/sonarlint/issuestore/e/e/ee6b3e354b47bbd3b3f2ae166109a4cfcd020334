@@ -1,0 +1,7 @@
+
+p
+java:S2975"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ô˜Ñ8”Ú‡ß.
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(½ùÿËşÿÿÿÿ8”Ú‡ß.
+e
+java:S1182"HUse super.clone() to create and seed the cloned instance to be returned.(ô˜Ñ8”Ú‡ß.

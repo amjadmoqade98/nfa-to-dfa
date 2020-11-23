@@ -1,0 +1,13 @@
+
+Y
+java:S3066"<Lower the visibility of this setter or remove it altogether.(¨ñˆÏ8áìÉŒß.
+–
+java:S1319"tThe type of the "states" object should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ñ¡²¶úÿÿÿÿ8áìÉŒß.
+—
+java:S1319"uThe type of the "letters" object should be an interface such as "Set" rather than the implementation "LinkedHashSet".(™ˆÅúÿÿÿÿ8áìÉŒß.
+^
+java:S3066"<Lower the visibility of this setter or remove it altogether.(ñ¡²¶úÿÿÿÿ8áìÉŒß.
+^
+java:S3066"<Lower the visibility of this setter or remove it altogether.(™ˆÅúÿÿÿÿ8áìÉŒß.
+N
+java:S1172",Remove this unused method parameter "input".(äÃ¥¿ıÿÿÿÿ8Š´ÊŒß.

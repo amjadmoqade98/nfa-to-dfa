@@ -1,0 +1,37 @@
+
+J
+java:S1602™",Remove useless curly braces around statement(ëÖ®²8¤¥‹øŞ.
+’
+java:S1319"uThe type of the "letters" object should be an interface such as "Set" rather than the implementation "LinkedHashSet".(‚«Ç­8¤¥‹øŞ.
+–
+java:S1319Ò"sThe return type of this method should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ø›ëûÿÿÿÿ8ÉÏ–‰ß.
+V	java:S106‡"9Replace this use of System.out or System.err by a logger.(ë»·ï8ÉÏ–‰ß.
+L
+java:S1066¿"/Merge this if statement with the enclosing one.(­ƒ»8ÉÏ–‰ß.
+‘
+java:S1319"tThe type of the "states" object should be an interface such as "Map" rather than the implementation "LinkedHashMap".(‚«Ç­8¤¥‹øŞ.
+r	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œŠ¡‚şÿÿÿÿ8¤¥‹øŞ.
+u
+java:S2293R"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÛÃÔx8¤¥‹øŞ.
+M
+java:S1905Y"0Remove this unnecessary cast to "LinkedHashSet".(‰ÔÉ¦8–Öãˆß.
+M
+java:S1905d"0Remove this unnecessary cast to "LinkedHashSet".(‰ÔÉ¦8ñƒ¦ˆß.
+O
+java:S1602˜",Remove useless curly braces around statement(’ÈÚïøÿÿÿÿ8ÉÏ–‰ß.
+
+java:S1319‘"rThe type of the "accessible" object should be an interface such as "Set" rather than the implementation "HashSet".(ÚÁŸ±8ÉÏ–‰ß.
+‹
+java:S1319Î"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(™ÁâÓ8ÉÏ–‰ß.
+t
+java:S3776G"RRefactor this method to reduce its Cognitive Complexity from 64 to the 15 allowed.(â’¬´üÿÿÿÿ8¤¥‹øŞ.
+–
+java:S1319Ö"sThe return type of this method should be an interface such as "Set" rather than the implementation "LinkedHashSet".(¼Ù³şÿÿÿÿ8ÉÏ–‰ß.
+{
+java:S22936"YReplace the type specification in this constructor call with the diamond operator ("<>").(â¹åÇùÿÿÿÿ8’Ä¤„ß.
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¥ê“ıÿÿÿÿ8‹±£„ß.
+|
+java:S2293 "YReplace the type specification in this constructor call with the diamond operator ("<>").(Îª³Úùÿÿÿÿ8ÉÏ–‰ß.
+9
+java:S1643i"Use a StringBuilder instead.(³Î¿ş8¤¥‹øŞ.

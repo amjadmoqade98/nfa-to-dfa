@@ -1,32 +1,32 @@
 package project.model;
 
 public class Bounds implements Cloneable {
-    private State startNode;
-    private State endNode;
+    private State startState;
+    private State finalState;
 
     public Bounds() {
     }
-    public State getStartNode() {
-        return startNode;
+    public State getstartState() {
+        return startState;
     }
 
-    public void setStartNode(State startNode) {
-        this.startNode = startNode;
+    public void setstartState(State startState) {
+        this.startState = startState;
     }
 
-    public State getEndNode() {
-        return endNode;
+    public State getEndState() {
+        return finalState;
     }
 
-    public void setEndNode(State endNode) {
-        this.endNode = endNode;
+    public void setEndState(State finalState) {
+        this.finalState = finalState;
     }
 
     @Override
     public Bounds clone() {
         Bounds b = new Bounds();
-        b.setStartNode(this.getStartNode());
-        b.setEndNode(this.getEndNode());
+        b.setstartState(this.getstartState());
+        b.setEndState(this.getEndState());
         return b ;
     }
 }

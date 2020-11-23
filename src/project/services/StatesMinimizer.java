@@ -1,22 +1,23 @@
 package project.services;
 
 import project.model.State;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
+public enum StatesMinimizer {
+    INSTANCE;
 
-public class StatesMinimizer {
-    private LinkedHashSet<String> letters;
-    private LinkedHashMap<String, State> states;
-    private LinkedHashSet<State> finalStates;
+    private Set<String> letters;
+    private Map<String, State> states;
+    private Set<State> finalStates;
+    private State startState;
 
-    public StatesMinimizer(LinkedHashSet<String> letters, LinkedHashMap<String, State> states, LinkedHashSet<State> finalStates) {
-        this.letters = letters;
-        this.states = states;
-        this.finalStates = finalStates;
+    public static StatesMinimizer createMinimizer(Set<String> letters, Map<String, State> states, Set<State> finalStates, State startState) {
+        INSTANCE.letters = letters;
+        INSTANCE.states = states;
+        INSTANCE.finalStates = finalStates;
+        INSTANCE.startState = startState;
+
+        return INSTANCE;
     }
 
     class Pair {
@@ -46,9 +47,8 @@ public class StatesMinimizer {
     }
 
     public void minimizeStates() {
-
         // finding feasible pairs
-        ArrayList<Pair> pairs = new ArrayList<>();
+        List<Pair> pairs = new ArrayList<>();
         this.states.forEach((s, state) -> {
             this.states.forEach((s1, state1) -> {
                 if (state != state1) {
@@ -62,35 +62,61 @@ public class StatesMinimizer {
                 }
             });
         });
-        ArrayList<Pair> markedPairs = new ArrayList<>();
 
-        pairs.forEach(pair -> {
-            AtomicBoolean equivalent = new AtomicBoolean(true);
-            pair.s1.getTransactions().forEach((s, states1) -> {
-                if (equivalent.get() == true) {
-                    State tempState1 = new ArrayList<>(states1).get(0);
-                    State tempState2 = new ArrayList<>(pair.s2.getTransactions().get(s)).get(0);
-                    if (tempState1 != tempState2) {
-                        if (!isPairExist(tempState1, tempState2, pairs) && !isPairExist(tempState1, tempState2, markedPairs)) {
-                            equivalent.set(false);
-                            markedPairs.add(pair);
+        //mark all the non equivalent pairs
+        List<Pair> markedPairs = new ArrayList<>();
+        boolean isAllRemoved = false;
+        while (!isAllRemoved) {
+            isAllRemoved = true;
+            for (Pair pair : pairs) {
+                boolean equivalent = true;
+                // loop over the the pair transaction looking for non equivalent transaction
+                for (Map.Entry<String, Set<State>> transaction : pair.s1.getTransactions().entrySet()) {
+                    if (equivalent == true) {
+                        State tempState1 = transaction.getValue().iterator().next();
+                        State tempState2 = pair.s2.getTransactions().get(transaction.getKey()).iterator().next();
+                        if (tempState1 != tempState2) {
+                            if (!isPairExist(tempState1, tempState2, pairs) || isPairExist(tempState1, tempState2, markedPairs)) {
+                                equivalent = false;
+                                markedPairs.add(pair);
+                                isAllRemoved = false;
+                            }
                         }
                     }
                 }
+            }
+        }
 
+        pairs.removeAll(markedPairs);
+
+
+        // to avoid removing the start state
+        for (Pair p : pairs) {
+            if (p.s1.equals(startState)) {
+                State temp = p.s1;
+                p.s1 = p.s2;
+                p.s2 = temp;
+            }
+        }
+
+        // remove one of each equivalent states
+        pairs.forEach(pair -> {
+            this.states.remove(pair.s1.getState());
+            this.finalStates.remove(pair.s1);
+        });
+
+        // replace any removed state from the other states transactions
+        pairs.forEach(pair -> {
+            states.forEach((s, state) -> {
+                for (Map.Entry<String, Set<State>> transaction : state.getTransactions().entrySet()) {
+                    if (transaction.getValue().iterator().next().equals(pair.s1)) {
+                        transaction.getValue().remove(pair.s1);
+                        transaction.getValue().add(pair.s2);
+                    }
+                }
             });
         });
-        System.out.println();
-
-        //finding pairs with equivalent states
-
-        boolean isAllRemoved = false;
-        while (!isAllRemoved) {
-
-        }
     }
-
-
 
     public boolean isPairExist(State p, State q, List<Pair> pairs) {
         Pair temp = new Pair(p, q);
@@ -100,11 +126,15 @@ public class StatesMinimizer {
         return false;
     }
 
-    public LinkedHashSet<String> getLetters() {
+    public Set<String> getLetters() {
         return letters;
     }
 
-    public LinkedHashMap<String, State> getStates() {
+    public Map<String, State> getStates() {
         return states;
+    }
+
+    public Set<State> getFinalStates() {
+        return finalStates;
     }
 }

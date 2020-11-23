@@ -5,21 +5,20 @@ import project.model.State;
 
 import java.util.*;
 
-public enum Table {
-    INSTANCE;
+public class Table {
 
-    private LinkedList<List> rows;
+    private static LinkedList<List> rows;
 
-    private int column;
+    private static int column;
 
-    private int[] columnLen;
+    private static int[] columnLen;
 
     private static int margin = 2;
 
-    private boolean printHeader = true;
+    private static boolean printHeader = true;
 
 
-    public void appendRow() {
+    private static void appendRow() {
         if (!rows.isEmpty()) {
             List temp = rows.getLast();
             if (temp.isEmpty())
@@ -29,7 +28,7 @@ public enum Table {
         rows.add(row);
     }
 
-    public Table appendColum(Object value) {
+    private static void appendColum(Object value) {
         if (value == null) {
             value = "";
         }
@@ -40,11 +39,9 @@ public enum Table {
         // to find the max len of each column
         if (columnLen[row.size() - 1] < len)
             columnLen[row.size() - 1] = len;
-        return this;
     }
 
-    @Override
-    public String toString() {
+    private static String table() {
         StringBuilder buf = new StringBuilder();
 
         int sumlen = 0;
@@ -62,7 +59,7 @@ public enum Table {
                 if (i < row.size())
                     o = row.get(i).toString();
                 buf.append('|').append(printChar(' ', margin)).append(o);
-                buf.append(printChar(' ', columnLen[i] - (ColoredText.isColored(o)? o.length() - 9 : o.length()) + margin));
+                buf.append(printChar(' ', columnLen[i] - (ColoredText.isColored(o) ? o.length() - 9 : o.length()) + margin));
             }
             buf.append("|\n");
             if (printHeader && ii == 0)
@@ -73,7 +70,7 @@ public enum Table {
         return buf.toString();
     }
 
-    private String printChar(char c, int len) {
+    private static String printChar(char c, int len) {
         StringBuilder buf = new StringBuilder();
         for (int i = 0; i < len; i++) {
             buf.append(c);
@@ -82,54 +79,50 @@ public enum Table {
     }
 
 
-    public void printStateMachine(LinkedHashMap<String, State> states , HashSet<String> letters ,State startState ,LinkedHashSet<State> endStates ) {
+    public static void printStateMachine(Map<String, State> states, Set<String> letters, State startState, Set<State> finalStates) {
         rows = new LinkedList<List>();
-        this.column = letters.size()+1;
-        this.columnLen = new int[column];
+        column = letters.size() + 1;
+        columnLen = new int[column];
 
-            // first row
-            INSTANCE.appendRow();
-            INSTANCE.appendColum("States/letters");
-            letters.forEach(l -> INSTANCE.appendColum(l));
+        // first row
+        appendRow();
+        appendColum("States/letters");
+        letters.forEach(l -> appendColum(l));
+        // row for each state
+        states.forEach((s, state) -> {
+            appendRow();
+            appendColum((state == startState) ? ColoredText.ToGreen(s) : (finalStates.contains(state) ? ColoredText.ToRed(s) : s));
+            Iterator<String> lettersIterator = letters.iterator();
+            while (lettersIterator.hasNext()) {
+                String l = lettersIterator.next();
+                l = (l.equals("Lambda")) ? "@" : l;
+                if (!state.getTransactions().keySet().contains(l)) {
+                    appendColum(" ");
+                } else {
+                    String row = "{";
+                    boolean firstT = true;
 
-            // row for each state
-             states.forEach((s, state) -> {
-                 INSTANCE.appendRow();
-                 INSTANCE.appendColum((state == startState) ? ColoredText.ToGreen(s) : (endStates.contains(state)? ColoredText.ToRed(s) : s ) );
-                Iterator<String> lettersIterator = letters.iterator();
-                while (lettersIterator.hasNext()) {
-                    String l = lettersIterator.next();
-                    l = (l.equals("Lambda")) ? "@" : l;
-                    if (!state.getTransactions().keySet().contains(l)) {
-                        INSTANCE.appendColum(" ");
-                    } else {
-                        String row = "{";
-                        boolean firstT = true;
-
-                        for (String letter : state.getTransactions().keySet()) {
-                            if (letter.equals(l)) {
-                                for(State state1 : state.getTransactions().get(letter)) {
-                                    row = (firstT) ? row : row + " ,";
-                                    row += state1.getState();
-                                    firstT = false;
-                                }
+                    for (String letter : state.getTransactions().keySet()) {
+                        if (letter.equals(l)) {
+                            for (State state1 : state.getTransactions().get(letter)) {
+                                row = (firstT) ? row : row + " ,";
+                                row += state1.getState();
+                                firstT = false;
                             }
                         }
-
-                        row += "}";
-                        INSTANCE.appendColum(row);
                     }
+                    row += "}";
+                    appendColum(row);
                 }
-            });
+            }
+        });
 
-                 System.out.println(INSTANCE);
+        System.out.println(table());
     }
 
-    public void printStateMachine(LinkedHashMap<String, State> states , HashSet<String> letters ,State startState ,State endState ) {
-        LinkedHashSet<State> endStates = new LinkedHashSet<>();
-       endStates.add(endState);
-       printStateMachine(states , letters, startState , endStates);
-
+    public static void printStateMachine(Map<String, State> states, Set<String> letters, State startState, State finalState) {
+        Set<State> finalStates = new LinkedHashSet<>();
+        finalStates.add(finalState);
+        printStateMachine(states, letters, startState, finalStates);
     }
-
 }
