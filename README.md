@@ -1,4 +1,3 @@
-[![Code Grade]https://www.code-inspector.com/project/16552/score/svg)](https://frontend.code-inspector.com/public/project/16552/NdfsaToDfsa/dashboard)
 
 
 # Nondeterministic finite states automaton To Minimized Deterministic finite states automaton 
