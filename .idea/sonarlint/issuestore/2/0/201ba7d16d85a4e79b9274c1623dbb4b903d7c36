@@ -1,11 +1,0 @@
-
-n
-java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(¹®Ùœÿÿÿÿÿ8†“ÀŞ.
-`
-java:S2583/"CChange this condition so that it does not always evaluate to "true"(™­Áó8û©’ÀŞ.
-L
-java:S1659#"*Declare "isSecondLine" on a separate line.(ÑÙöúÿÿÿÿ8û©’ÀŞ.
-K
-java:S1659#")Declare "isThirdLine" on a separate line.(ÑÙöúÿÿÿÿ8û©’ÀŞ.
-\
-java:S1118":Add a private constructor to hide the implicit public one.(–ë÷ÿÿÿÿÿ8£¿‚‹ß.
