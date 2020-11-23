@@ -29,20 +29,17 @@ I did this project for my University Class (Compiler Class)
 
 ## Test case:
 
-file
+file: <br/>
 <img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/file.png" />
 
 
-Console After Run: 
+Console After Run: <br/>
 
 <img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/ndfsa.png" />
-<img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/dfsa.png" />
 <img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/lambda.png" />
 <img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/nonD.png" />
+<img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/Rename.png" />
 <img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/nonAc.png" />
 <img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/minimize.png" />
 <img src="https://github.com/AmjadMoqade98/NdfsaToDfsa/blob/main/src/resources/images/validate.png" />
 
-
-
-()
