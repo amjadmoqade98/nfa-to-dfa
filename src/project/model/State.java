@@ -2,13 +2,15 @@ package project.model;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class State {
 
     private String state ;
     private boolean visiting;
     private boolean visited;
-    private LinkedHashMap<String, LinkedHashSet<State>> transactions ;
+    private Map<String, Set<State>> transactions ;
 
     public State(String state) {
         this.state = state;
@@ -22,11 +24,11 @@ public class State {
        this.transactions.get(letter).add(next);
     }
 
-    public void setTransactions(LinkedHashMap<String, LinkedHashSet<State>> transactions) {
+    public void setTransactions(Map<String, Set<State>> transactions) {
         this.transactions = transactions;
     }
 
-    public LinkedHashMap<String,  LinkedHashSet<State>> getTransactions() {
+    public Map<String,  Set<State>> getTransactions() {
         return transactions;
     }
 

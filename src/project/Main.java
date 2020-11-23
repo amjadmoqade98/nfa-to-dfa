@@ -1,69 +1,66 @@
 package project;
 
-import project.model.State;
-import project.services.DFSA;
-import project.services.NDFSA;
+import project.services.DeterministicConverter;
+import project.model.NDFSA;
 import project.services.StatesMinimizer;
+import project.services.StringValidator;
 import project.utils.Table;
-import project.utils.NDFSAFileParser;
+import project.utils.NDFSAParser;
 
 import java.io.*;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
-
 
 public class Main {
-    static int index = 0;
-    static  LinkedHashMap<String, State> states;
 
     public static void main(String[] args) throws IOException {
-        NDFSA ndfsa = NDFSAFileParser.parseFile("src\\resources\\data.txt");
-        HashSet<String> initialStates  = new HashSet<String> (ndfsa.getStates().keySet());
+        NDFSA ndfsa = NDFSAParser.parseFile("src\\resources\\data.txt");
+        HashSet<String> initialStates = new HashSet<String>(ndfsa.getStates().keySet());
 
-        states = ndfsa.getStates();
         System.out.println("NDFSA : ");
-        Table.INSTANCE.printStateMachine(ndfsa.getStates(), ndfsa.getLetters(), ndfsa.getBounds().getStartNode(),
-                ndfsa.getBounds().getEndNode());
+        Table.printStateMachine(ndfsa.getStates(), ndfsa.getLetters(), ndfsa.getBounds().getstartState(),
+                ndfsa.getBounds().getEndState());
 
-        DFSA dfsa = new DFSA(ndfsa.getLetters(), ndfsa.getStates(), ndfsa.getBounds());
-        states = dfsa.getStates();
+        DeterministicConverter deterministicConverter = DeterministicConverter.createDFSA(ndfsa.getLetters(),
+                ndfsa.getStates(), ndfsa.getBounds());
 
-        dfsa.removeLambdaTransactions();
-        states = dfsa.getStates();
+        deterministicConverter.removeLambdaTransactions();
 
         System.out.println("Dfsa After removing lambda Transactions : ");
-        Table.INSTANCE.printStateMachine(dfsa.getStates(), dfsa.getLetters(), ndfsa.getBounds().getStartNode(),
-                dfsa.getFinalStates());
+        Table.printStateMachine(deterministicConverter.getStates(),
+                deterministicConverter.getLetters(), ndfsa.getBounds().getstartState(),
+                deterministicConverter.getFinalStates());
 
-        dfsa.removeOfNonDeterminism();
-        states = dfsa.getStates();
+        deterministicConverter.removeOfNonDeterminism();
 
         System.out.println("Dfsa After removing Of Non Determinism");
-        Table.INSTANCE.printStateMachine(dfsa.getStates(), ndfsa.getLetters(), ndfsa.getBounds().getStartNode(),
-                dfsa.getFinalStates());
+        Table.printStateMachine(deterministicConverter.getStates(),
+                ndfsa.getLetters(), ndfsa.getBounds().getstartState(), deterministicConverter.getFinalStates());
 
-        dfsa.removalNonAccessibleStates();
-        states = dfsa.getStates();
+        deterministicConverter.removalNonAccessibleStates();
 
         System.out.println("Dfsa After removing Non Accessible States");
-        Table.INSTANCE.printStateMachine(dfsa.getStates(), ndfsa.getLetters(), ndfsa.getBounds().getStartNode(),
-                dfsa.getFinalStates());
+        Table.printStateMachine(deterministicConverter.getStates(), ndfsa.getLetters(), ndfsa.getBounds().getstartState(),
+                deterministicConverter.getFinalStates());
 
-
-        dfsa.refreshNames(initialStates);
-        states = dfsa.getStates();
-
+        deterministicConverter.refreshNames(initialStates);
         System.out.println("Dfsa After refersh names");
-        Table.INSTANCE.printStateMachine(dfsa.getStates(), ndfsa.getLetters(), ndfsa.getBounds().getStartNode(),
-                dfsa.getFinalStates());
+        Table.printStateMachine(deterministicConverter.getStates(), ndfsa.getLetters(), ndfsa.getBounds().getstartState(),
+                deterministicConverter.getFinalStates());
 
 
-        StatesMinimizer minimizer = new StatesMinimizer(ndfsa.getLetters() , dfsa.getStates() , dfsa.getFinalStates());
+        StatesMinimizer minimizer = StatesMinimizer.createMinimizer(ndfsa.getLetters(), deterministicConverter.getStates(),
+                deterministicConverter.getFinalStates(), ndfsa.getBounds().getstartState());
         minimizer.minimizeStates();
 
         System.out.println("After Minimizing DFSA");
-        Table.INSTANCE.printStateMachine(minimizer.getStates(), minimizer.getLetters(), ndfsa.getBounds().getStartNode(),
-                dfsa.getFinalStates());
+        Table.printStateMachine(minimizer.getStates(), minimizer.getLetters(), ndfsa.getBounds().getstartState(),
+                deterministicConverter.getFinalStates());
+
+
+        // validating strings
+        StringValidator validator = StringValidator.createValidator(ndfsa.getBounds().getstartState(), ndfsa.getLetters(),
+                minimizer.getStates(), minimizer.getFinalStates());
+        validator.validationLifeCycle();
     }
 }
 

@@ -2,7 +2,7 @@ package project.utils;
 
 import project.model.Bounds;
 import project.model.State;
-import project.services.NDFSA;
+import project.model.NDFSA;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,7 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class NDFSAFileParser {
+public class NDFSAParser {
 
     public static NDFSA parseFile(String fileUrl) throws IOException {
 
@@ -42,7 +42,7 @@ public class NDFSAFileParser {
                 }
                 isFirstLine = false;
             } else if (isSecondLine) {
-                bounds.setEndNode(states.get(st));
+                bounds.setEndState(states.get(st));
                 isSecondLine = false;
             } else if (isThirdLine) {
                 String[] letters1 = st.split(" ");
@@ -52,8 +52,8 @@ public class NDFSAFileParser {
                 String[] transaction = st.split(" ");
                 states.get(transaction[0]).addTransaction(transaction[2],
                         states.get(transaction[1]));
-                if (bounds.getStartNode() == null) {
-                    bounds.setStartNode(states.get(transaction[0]));
+                if (bounds.getstartState() == null) {
+                    bounds.setstartState(states.get(transaction[0]));
                 }
             }
         }
