@@ -3,7 +3,7 @@
 
 
 # Nondeterministic finite states automaton To Minimized Deterministic finite states automaton 
-I did this project for my University Class (Compiler Class)
+I made this project for my University Class (Compiler Class)
 ***
 
 ## Steps
