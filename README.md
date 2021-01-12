@@ -2,7 +2,7 @@
 [![Code Grade](https://www.code-inspector.com/project/16552/status/svg)](https://frontend.code-inspector.com/public/project/16552/NdfsaToDfsa/dashboard)
 
 
-# Nondeterministic finite states automaton To Minimized Deterministic finite states automaton 
+# Nondeterministic finite states To Minimized Deterministic finite states  
 I made this project for my University Class (Compiler Class)
 ***
 
