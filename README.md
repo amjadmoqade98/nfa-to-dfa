@@ -3,7 +3,6 @@
 
 
 # Nondeterministic finite states To Minimized Deterministic finite states  
-I wrote this project as a part of a University Class (Compiler Class)
 ***
 
 ## Steps
