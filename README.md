@@ -3,7 +3,7 @@
 
 
 # Nondeterministic finite states To Minimized Deterministic finite states  
-***
+
 
 ## Steps
 1. read Nondeterministic finite states from a file <br/><br/>
