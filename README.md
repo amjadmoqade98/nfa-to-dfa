@@ -2,7 +2,7 @@
 [![Code Grade](https://www.code-inspector.com/project/16552/status/svg)](https://frontend.code-inspector.com/public/project/16552/NdfsaToDfsa/dashboard)
 
 
-# Nondeterministic finite states To Minimized Deterministic finite states  
+# nondeterministic finite states To minimized deterministic finite states  
 
 
 ## Steps
